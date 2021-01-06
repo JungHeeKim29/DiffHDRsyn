@@ -1,14 +1,13 @@
 # DiffHDRsyn
-This repository contains the official python implementation for
-
+This repository contains the official python implementation for  
 full paper "End-to-End Differentiable Learning to HDR Image Synthesis for Multi-exposure Images" at AAAI 2021  
 short paper "Differentiable HDR Image Synthesis using Multi-exposure Images" at DiffCVGP NeurIPSW 2020
 
 If you find our [paper](https://arxiv.org/abs/2006.15833) or code useful, please cite our papers.
 
 ### Requirements
-
-VDS dataset can be downloaded from [here](https://drive.google.com/drive/folders/1i7iTC6t6e_ZhyCq178V3-nN-IS5-5WOe?usp=sharing)  
+Whole VDS dataset will be available soon.
+Example dataset can be downloaded from [here](https://drive.google.com/drive/folders/163wy8VVxWJze4l5cPIXEM4fko_Q3x6y8?usp=sharing)
 Pretrained weights can be downloaded from [here](https://drive.google.com/drive/folders/1inzZWbBTlOJTuqJODHvOhNSg-o60LyWs?usp=sharing)
 
 The code was tested under the following setting:
@@ -23,9 +22,9 @@ The code was tested under the following setting:
 
 ### Training
 1. Download VDS dataset (train_set, train_hdr) from upper link and edit 'data_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path  
-2. Download VDS dataset (test_set, test_hdr) from upper link and edit 'validate_dir' in [default_config.yaml]
-2. Change the 'mode' to 'train' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
-3. Run **python main.py**
+2. Download VDS dataset (test_set, test_hdr) from upper link and edit 'validate_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)  
+3. Change the 'mode' to 'train' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
+4. Run **python main.py**
 
 ### Testing
 1. Download VDS dataset (test_set, test_hdr) from upper link and edit 'test_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path  
