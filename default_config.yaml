@@ -1,6 +1,7 @@
 # Directory
 data_dir : './dataset/train'
 validate_dir : './dataset/test'
+test_dir : './dataset/test'
 
 model_dir : './result_stack/checkpoint/'
 sample_dir : './result_stack/sample/'
