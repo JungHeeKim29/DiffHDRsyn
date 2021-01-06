@@ -31,5 +31,5 @@ Change the 'mode' to 'test' in [default_config.yaml](https://github.com/JungHeeK
 
 ## Acknowledgement
 
-Our CoBi Loss code is developed based on the PyTorch implementation of Contextual Loss (CX) and Contextual Bilateral Loss (CoBi) provided by [contextual_loss_pytorch](https://github.com/S-aiueo32/contextual_loss_pytorch)
-Our Adam Centralization code is developed based on the PyTorch implementation of Gradient Centralization provided by [Gradient Centralization](https://github.com/Yonghongwei/Gradient-Centralization)
+Our CoBi Loss code is developed based on the PyTorch implementation of Contextual Loss (CX) and Contextual Bilateral Loss (CoBi) provided by [contextual_loss_pytorch](https://github.com/S-aiueo32/contextual_loss_pytorch)  
+Our Adam Cent code is developed based on the PyTorch implementation of Gradient Centralization provided by [Gradient Centralization](https://github.com/Yonghongwei/Gradient-Centralization)
