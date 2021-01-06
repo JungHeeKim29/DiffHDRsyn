@@ -22,14 +22,15 @@ Pretrained weights can be downloaded from [here](https://drive.google.com/drive/
 8. matplotlib == 3.2.1
 
 ### Training
+Download VDS dataset (train_set, train_hdr) from upper link and edit 'test_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path  
+Change the 'mode' to 'train' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
 
 ### Testing
 Download VDS dataset (test_set, test_hdr) from upper link and edit 'test_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path  
-Download pretrained weights from upper link and place the weights in 'model_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
+Download pretrained weights from upper link and place the weights in 'model_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)  
 Change the 'mode' to 'test' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
 
-
-## Acknowledgement
+## References
 
 Our CoBi Loss code is developed based on the PyTorch implementation of Contextual Bilateral Loss (CoBi) provided by [contextual_loss_pytorch](https://github.com/S-aiueo32/contextual_loss_pytorch)  
 Our Adam Cent code is developed based on the PyTorch implementation of Gradient Centralization provided by [Gradient Centralization](https://github.com/Yonghongwei/Gradient-Centralization)
