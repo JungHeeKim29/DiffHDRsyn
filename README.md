@@ -24,8 +24,8 @@ Pretrained weights can be downloaded from [here](https://drive.google.com/drive/
 ### Training
 
 ### Testing
-Download VDS dataset (test_set, test_hdr) from upper link and edit 'test_dir' of default_config.yaml to the desired path
-Download pretrained weights and place the weights in 'model_dir' of default_config.yaml
+Download VDS dataset (test_set, test_hdr) from upper link and edit 'test_dir' of [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path
+Download pretrained weights and place the weights in 'model_dir' of [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
 
 
 ## Acknowledgement
