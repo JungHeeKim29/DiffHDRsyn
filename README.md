@@ -6,7 +6,7 @@ short paper "Differentiable HDR Image Synthesis using Multi-exposure Images" at 
 If you find our [paper](https://arxiv.org/abs/2006.15833) or code useful, please cite our papers.
 
 ### Requirements
-Whole VDS dataset will be available soon  
+VDS dataset will be available soon  
 Example dataset can be downloaded from [here](https://drive.google.com/drive/folders/163wy8VVxWJze4l5cPIXEM4fko_Q3x6y8?usp=sharing)  
 Pretrained weights can be downloaded from [here](https://drive.google.com/drive/folders/1inzZWbBTlOJTuqJODHvOhNSg-o60LyWs?usp=sharing)
 
