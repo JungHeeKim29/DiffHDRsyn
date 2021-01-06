@@ -1,0 +1,39 @@
+# Directory
+data_dir : '/database3/Jung/HDR'
+validate_dir : '/database3/Jung/HDR'
+
+model_dir : './result_stack/checkpoint/'
+sample_dir : './result_stack/sample/'
+
+# Hyperparameter
+gpu_id : [0,1] 
+batch_size : 1 
+img_size : 256
+n_epochs : 7000   
+lr_edge : 0.0001
+lr_glob : 0.0001
+lr_render : 0.00001
+beta1 : 0.5
+beta2 : 0.999
+optim : 'adam_cent'
+decay : 0.00005
+
+# EV range
+min_ev : -3
+max_ev : 3
+ref_ev : 3
+
+mode : 'train'
+pretrained : False
+
+# Steps
+log_step : 10
+model_save_step : 2000
+validate_step: 2000 # validate step
+load_step : 10000
+display_step : 1000
+refine_step : 10000
+
+# Test 
+test_step :  '55000'
+test_dir : './test_crf_n5/'
