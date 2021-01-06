@@ -1,6 +1,6 @@
 # Directory
-data_dir : '/database3/Jung/HDR'
-validate_dir : '/database3/Jung/HDR'
+data_dir : './dataset/train'
+validate_dir : './dataset/test'
 
 model_dir : './result_stack/checkpoint/'
 sample_dir : './result_stack/sample/'
@@ -35,5 +35,5 @@ display_step : 1000
 refine_step : 10000
 
 # Test 
-test_step :  '55000'
-test_dir : './test_crf_n5/'
+test_step : '80000'
+test_dir : './test_result/'
