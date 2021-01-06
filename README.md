@@ -14,7 +14,7 @@ The code was tested under the following setting:
   1. pytorch >= 1.2.0
   2. torchvision >= 0.4.0
   3. scipy == 1.2.1
-  4. pyaml == 19.4.1
+  4. pyaml == 19.4.1, yaml == 0.1.7
   5. opencv == 4.2.0
   6. pillow == 6.1.0
   7. scikit-learn == 0.20.4
