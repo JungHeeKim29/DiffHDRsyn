@@ -1,12 +1,14 @@
 # Directory
-data_dir : '/database3/Jung/HDR'
-validate_dir : '/database3/Jung/HDR'
-test_dir : '/database3/Jung/hdr_temp'
+data_dir : './dataset/'
+validate_dir : './dataset_validate/'
+test_dir : './dataset_test/'
 
 model_dir : './result_stack/checkpoint/'
 sample_dir : './result_stack/sample/'
 
 # Hyperparameter
+mode : 'test'
+
 gpu_id : [0,1] 
 batch_size : 1 
 img_size : 256
@@ -24,7 +26,6 @@ min_ev : -3
 max_ev : 3
 ref_ev : 3
 
-mode : 'test'
 pretrained : False
 
 # Steps
