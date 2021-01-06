@@ -36,7 +36,6 @@ class test_HDR():
         self.data_dir = config['test_dir']        
 
         self.device = config['gpu_id']
-        self.log_dir = config['log_dir']
         self.model_path = config['model_dir']
         self.output_dir = config['test_dir']
 
