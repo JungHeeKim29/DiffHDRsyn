@@ -20,11 +20,10 @@ The code was tested under the following setting:
   7. scikit-learn == 0.20.4
   8. matplotlib == 3.2.1
 
-### Training
-1. Download VDS dataset (train_set, train_hdr) from upper link and edit 'data_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path  
-2. Download VDS dataset (test_set, test_hdr) from upper link and edit 'validate_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)  
-3. Change the 'mode' to 'train' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
-4. Run **python main.py**
+### Training (Available soon)
+1. Download VDS dataset and edit 'data_dir', 'validate_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path  
+2. Change the 'mode' to 'train' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
+3. Run **python main.py**
 
 ### Testing
 1. Download VDS dataset (test_set, test_hdr) from upper link and edit 'test_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path  
