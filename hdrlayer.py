@@ -14,7 +14,7 @@ class hdrlayer(nn.Module):
         merge_type = 'log',
         lin_type = 'LUT',
         method = 'Debevec',
-        bMeanWeight = 0,# 이건 뺄수도 있습니다.
+        bMeanWeight = 0,
         weight_type = 'Deb97',
         device = 0,
         num_channels = 3,
@@ -47,8 +47,6 @@ class hdrlayer(nn.Module):
         self.method = method
         # rgb_channel
         # todo: for 1channels
-        #self.calibrated_crf = nn.Conv1d(num_channels, num_channels, 1)
-        #self.calibrated_crf = nn.Parameter(torch.zeros(1,3,256))
     def forward(self, stack, stack_exposure):
         '''
         Input:
@@ -72,8 +70,6 @@ class hdrlayer(nn.Module):
         # Correcting the range of image pixel values
         if (stack.view(-1).max() > 255):
            scale = 65535.0 # uint16
-        #elif (stack.view(-1).max() > 1):
-        #   scale = 255.0 # uint8
         else :
            scale = 1.0
         stack = stack/scale
@@ -85,8 +81,6 @@ class hdrlayer(nn.Module):
             pp = 0 
         elif self.method == 'Mitsun':
             lin_fun, pp = MitsunagaNayarCRF(stack, stack_exposure, N=5)
-        #lin_fun = self.calibrated_crf(lin_fun)
-        #lin_fun = lin_fun + self.calibrated_crf
 
         # For numerical stability
         delta_value = 1.0 / 65536.0

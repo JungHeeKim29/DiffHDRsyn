@@ -22,7 +22,8 @@ from config_tool import get_config
 
 from hdrlayer import hdrlayer
 from model.GRU_model import Generator_up, Generator_down
-from model.structure import Structure_up, Structure_down, CombineNet_up, CombineNet_down
+from model.structure import Structure_up, Structure_down
+from model.combine import CombineNet_up, CombineNet_down
 
 from utils.io import *
 from utils.Adam import Adam_GCC
@@ -337,7 +338,7 @@ class Solver(object):
         # Validation
         for index, data in enumerate(self.validloader):
 
-            scene = 't'+str(index)
+            scene = '%04d' % index
             scene_path = os.path.join(sample_path, str(scene))
 
             if not (os.path.isdir(scene_path)):
@@ -470,8 +471,8 @@ class Solver(object):
                 up_length = 1e-8
                 down_length = 1e-8
 
-                ref_ev_up = ev#self.ref_ev
-                ref_ev_down = ev#self.ref_ev
+                ref_ev_up = ev #self.ref_ev
+                ref_ev_down = ev #self.ref_ev
 
                 ref_up_image = image_stack[:,ref_ev_up,:]
                 ref_down_image = image_stack[:, ref_ev_down,:]
@@ -483,7 +484,6 @@ class Solver(object):
                 h_up_edge = None
                 h_down_img = None
                 h_down_edge = None
-
 
                 for index in range((self.length-1)) : 
                     # Generator Up
@@ -749,6 +749,7 @@ class Solver(object):
                     = total_hdr_loss
                     loss['HDR/CXloss'] \
                     = stack_cx_loss.item()
+
                 else:
                     self.reset_grad()
                     edge_recon_loss.backward(retain_graph=True)
@@ -814,8 +815,10 @@ class Solver(object):
                     image = torch.cat([image_stack.squeeze(0),
                                        pred_int_stack.squeeze(0),
                                        pred_stack.squeeze(0)],0)
+
                     edge = torch.cat([(edge_stack*2-1).squeeze(0),
                                       (pred_edge_stack*2-1).squeeze(0)], 0)
+
                     edge = edge.expand([self.length*2, 3, 
                            self.img_size, self.img_size])
                     

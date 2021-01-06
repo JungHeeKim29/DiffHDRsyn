@@ -19,8 +19,8 @@ def main(config):
     if config['mode'] == 'test':
         print('Start Testing...')
         # Create directories if not exist.
-        if not os.path.exists(config['test_dir']):
-            os.makedirs(config['test_dir'])
+        if not os.path.exists(config['test_result_dir']):
+            os.makedirs(config['test_result_dir'])
         tester = test_HDR(config)
         tester.test()
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
    
     # cuda device
     os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   
-    os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
+    os.environ["CUDA_VISIBLE_DEVICES"]="2,3"
 
     config = get_config()
     main(config)

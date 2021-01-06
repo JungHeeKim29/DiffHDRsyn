@@ -5,20 +5,16 @@ import random
 import numpy as np
 
 import torch.utils.data
-
 from PIL import Image
-
 from torch import nn
-
 from torch.utils.data import DataLoader
-
 from dataloader import ImageDataset
-
 from config_tool import get_config
 
 from hdrlayer import hdrlayer
 from model.GRU_model import Generator_up, Generator_down
-from model.structure import Structure_up, Structure_down, CombineNet_up, CombineNet_down
+from model.structure import Structure_up, Structure_down
+from model.combine import CombineNet_up, CombineNet_down
 
 from utils.io import *
 from utils.img_utils import *
@@ -33,11 +29,11 @@ class test_HDR():
         self.ref_ev = config['ref_ev'] 
         self.length = self.max_ev - self.min_ev + 1
 
-        self.data_dir = config['test_dir']        
+        self.data_dir = config['test_dir']
 
         self.device = config['gpu_id']
         self.model_path = config['model_dir']
-        self.output_dir = config['test_dir']
+        self.output_dir = config['test_result_dir']
 
         self.test_loader = DataLoader(ImageDataset(
                                      self.data_dir, self.img_size,
@@ -62,7 +58,7 @@ class test_HDR():
 
         self.combine_up = CombineNet_up(7,16,5,1)
         self.combine_down = CombineNet_down(7,16,5,1)
-        self.hdrlayer = hdrlayer(method='Mitsun', lin_type='poly')
+        self.hdrlayer = hdrlayer(lin_type = 'LUT', method='Debevec')
 
         print('Using pre-trained weights')
         gen_up_path = os.path.join(self.model_path,
@@ -184,7 +180,7 @@ class test_HDR():
         # Validation
         for index, data in enumerate(self.test_loader):
 
-            scene = 't'+str(index)
+            scene = '%04d' % index
             scene_path = os.path.join(sample_path, str(scene))
 
             if not (os.path.isdir(scene_path)):
@@ -192,7 +188,7 @@ class test_HDR():
 
             # Inputs
             image_stack = data[0].type(dtype)
-            target_hdr = data[1].type(dtype)
+            #target_hdr = data[1].type(dtype)
             ev_stack = data[2].type(dtype)
             edge_stack = data[3].type(dtype)
            
@@ -224,12 +220,10 @@ class test_HDR():
                 pred_edge = denorm_pred_edge[i]
                 target_edge = denorm_target_edge[i]
 
-                pred_int_img = denorm_pred_int_stack[i]
-
                 pred_output_name = os.path.join(scene_path,
-                       scene+'_'+str(index - self.ref_ev)+'EV_pred.jpg.png')
+                     str(index - self.ref_ev)+'EV_pred.jpg.png')
                 pred_edge_name = os.path.join(scene_path,
-                       scene+'_'+str(index - self.ref_ev)+'EV_pred_edge.png')
+                     str(index - self.ref_ev)+'EV_pred_edge.png')
 
                 pred_image.save(pred_output_name)
                 pred_edge.save(pred_edge_name)
@@ -273,7 +267,6 @@ class test_HDR():
 
             np.save(os.path.join(scene_path, 'pred_crf'), gen_crf[0,:,:].cpu())
             np.save(os.path.join(scene_path, 'target_crf'), target_crf[0,:,:].cpu())
-
 
             cv2.imwrite(pred_hdr_name, denorm_gen_hdr)
             cv2.imwrite(gt_hdr_name, denorm_target_hdr)
