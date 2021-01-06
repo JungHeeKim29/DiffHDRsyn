@@ -33,5 +33,5 @@ The code was tested under the following setting:
 
 ## Acknowledgement
 
-The code for the CoBi Loss code is folked from the [Contextual_loss_pytorch](https://github.com/S-aiueo32/contextual_loss_pytorch)  
-The code for the Adam Cent code is folked from the [Gradient Centralization](https://github.com/Yonghongwei/Gradient-Centralization)
+The code for the coBi loss is folked from the [Contextual_loss_pytorch](https://github.com/S-aiueo32/contextual_loss_pytorch)  
+The code for the adam cent is folked from the [Gradient Centralization](https://github.com/Yonghongwei/Gradient-Centralization)
