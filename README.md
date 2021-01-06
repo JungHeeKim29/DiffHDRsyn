@@ -31,7 +31,7 @@ The code was tested under the following setting:
 3. Change the 'mode' to 'test' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
 4. Run **python main.py**
 
-## Acknowledgement
+### Acknowledgement
 
 The code for the coBi loss is folked from the [Contextual_loss_pytorch](https://github.com/S-aiueo32/contextual_loss_pytorch)  
 The code for the adam cent is folked from the [Gradient Centralization](https://github.com/Yonghongwei/Gradient-Centralization)
