@@ -33,8 +33,7 @@ class test_HDR():
         self.ref_ev = config['ref_ev'] 
         self.length = self.max_ev - self.min_ev + 1
 
-        self.data_dir = config['data_dir']
-        self.validate_dir = config['validate_dir']
+        self.data_dir = config['test_dir']        
 
         self.device = config['gpu_id']
         self.log_dir = config['log_dir']
@@ -227,24 +226,14 @@ class test_HDR():
                 target_edge = denorm_target_edge[i]
 
                 pred_int_img = denorm_pred_int_stack[i]
-                #save_image = Image.fromarray(save_image)
 
                 pred_output_name = os.path.join(scene_path,
                        scene+'_'+str(index - self.ref_ev)+'EV_pred.jpg.png')
-                #target_output_name = os.path.join(scene_path,
-                #       scene+'_'+str(index-self.ref_ev)+'EV_true.jpg.png')
                 pred_edge_name = os.path.join(scene_path,
                        scene+'_'+str(index - self.ref_ev)+'EV_pred_edge.png')
-                #target_edge_name = os.path.join(scene_path,
-                #       scene+'_'+str(index - self.ref_ev)+'EV_true_edge.png')
-                #pred_int_name = os.path.join(scene_path,
-                #       scene+'_'+str(index - self.ref_ev)+'EV_pred_glob_img.png')
 
                 pred_image.save(pred_output_name)
-                #target_image.save(target_output_name)
                 pred_edge.save(pred_edge_name)
-                #target_edge.save(target_edge_name)
-                #pred_int_img.save(pred_int_name)  
 
                 index += 1
 
