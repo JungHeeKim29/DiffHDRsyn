@@ -4,8 +4,7 @@ This repository contains the official python implementation for
 full paper "End-to-End Differentiable Learning to HDR Image Synthesis for Multi-exposure Images" at AAAI 2021  
 short paper "Differentiable HDR Image Synthesis using Multi-exposure Images" at DiffCVGP NeurIPSW 2020
 
-If you find our paper or code useful, please cite our papers.
-
+If you find our [paper](https://arxiv.org/abs/2006.15833) or code useful, please cite our papers.
 
 ### Requirements
 
@@ -24,16 +23,17 @@ The code was tested under the following setting:
 
 ### Training
 1. Download VDS dataset (train_set, train_hdr) from upper link and edit 'data_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path  
+2. Download VDS dataset (test_set, test_hdr) from upper link and edit 'validate_dir' in [default_config.yaml]
 2. Change the 'mode' to 'train' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
 3. Run **python main.py**
 
 ### Testing
 1. Download VDS dataset (test_set, test_hdr) from upper link and edit 'test_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path  
-2. Download pretrained weights from upper link and place the weights in 'model_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)  
+2. Download pretrained weights from upper link and place the weights in the desired path and edit 'model_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)  
 3. Change the 'mode' to 'test' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
 4. Run **python main.py**
 
 ## Acknowledgement
 
-Our CoBi Loss code is borrowed from the [Contextual_loss_pytorch](https://github.com/S-aiueo32/contextual_loss_pytorch)  
-Our Adam Cent code is borrowed from the [Gradient Centralization](https://github.com/Yonghongwei/Gradient-Centralization)
+The code for the CoBi Loss code is folked from the [Contextual_loss_pytorch](https://github.com/S-aiueo32/contextual_loss_pytorch)  
+The code for the Adam Cent code is folked from the [Gradient Centralization](https://github.com/Yonghongwei/Gradient-Centralization)
