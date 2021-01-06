@@ -19,15 +19,17 @@ Pretrained weights can be downloaded from [here](https://drive.google.com/drive/
 5. opencv == 4.2.0
 6. pillow == 6.1.0
 7. scikit-learn == 0.20.4
-8. matplotlib = 3.2.1
+8. matplotlib == 3.2.1
 
 ### Training
 
 ### Testing
-Download VDS dataset (test_set, test_hdr) from upper link and edit 'test_dir' of [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path
-Download pretrained weights and place the weights in 'model_dir' of [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
+Download VDS dataset (test_set, test_hdr) from upper link and edit 'test_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml) to the desired path  
+Download pretrained weights from upper link and place the weights in 'model_dir' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
+Change the 'mode' to 'test' in [default_config.yaml](https://github.com/JungHeeKim29/DiffHDRsyn/blob/main/default_config.yaml)
 
 
 ## Acknowledgement
 
-Our cobi loss code is developed based on the PyTorch implementation of Contextual Loss (CX) and Contextual Bilateral Loss (CoBi) provided by [contextual_loss_pytorch](https://github.com/S-aiueo32/contextual_loss_pytorch)
+Our CoBi Loss code is developed based on the PyTorch implementation of Contextual Loss (CX) and Contextual Bilateral Loss (CoBi) provided by [contextual_loss_pytorch](https://github.com/S-aiueo32/contextual_loss_pytorch)
+Our Adam Centralization code is developed based on the PyTorch implementation of Gradient Centralization provided by [Gradient Centralization](https://github.com/Yonghongwei/Gradient-Centralization)
