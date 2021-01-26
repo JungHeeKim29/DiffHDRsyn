@@ -64,8 +64,10 @@ class hdrlayer(nn.Module):
            -lin_fun: the camera response function.
 
         Example:
-            This example line shows how to load a stack from disk:
-            stack = ReadLDRStack('stack_alignment', 'jpg');                            stack_exposure = ReadLDRExif('stack_alignment', 'jpg');                    BuildHDR(stack, stack_exposure,'tabledDeb97',[],'Deb97');
+            This example line shows how to load a stack from disk :
+            stack = ReadLDRStack('stack_alignment', 'jpg');      
+            stack_exposure = ReadLDRExif('stack_alignment', 'jpg');                 
+            BuildHDR(stack, stack_exposure,'tabledDeb97',[],'Deb97');
         '''
         # Correcting the range of image pixel values
         if (stack.view(-1).max() > 255):
@@ -96,7 +98,7 @@ class hdrlayer(nn.Module):
         hdr_list = list()
 
         for i in range(batch_size):        
-            stack_b = stack[i,:,:,:,:] # 배치별 stack
+            stack_b = stack[i,:,:,:,:] # batch stack
             stack_exposure_b = stack_exposure[i, :]
             lin_fun_b = lin_fun[i, :,:] 
 
