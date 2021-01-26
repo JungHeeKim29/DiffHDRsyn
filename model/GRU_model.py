@@ -110,8 +110,7 @@ class Generator_up(nn.Module):
 
         denorm_x = in_x/2 +0.5
         denorm_x = torch.clamp(denorm_x, 0,1)
- 
-        # Thresh 보다 크면 0 나머진alpha, 입력영상은 1-alpha랑 곱할것
+
         alpha = torch.where(denorm_x>thresh,
                             (1-denorm_x)/slope,
                             (slope-2*(1-thresh))/(slope*(1-2*thresh))*(denorm_x-thresh)+(1-thresh)/slope)
@@ -150,7 +149,7 @@ class Generator_down(nn.Module):
         #    inter_layers += [Recurrent_unit(nf,nf,kernel_size=3, norm = 'none', act = 'swish')]
 
             #inter_layers += [ConvGRUCell(nf, nf, kernel_size=3)]
-#ConvBlock(nf, nf, kernel_size=3, stride =1, padding=1, norm = 'none'  activation = 'swish')]
+            #ConvBlock(nf, nf, kernel_size=3, stride =1, padding=1, norm = 'none'  activation = 'swish')]
 
         up_layers = []
         for up in range(ndown):
