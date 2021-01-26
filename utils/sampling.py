@@ -39,8 +39,6 @@ def GrossbergSampling(stack, nsamples = 256):
     u = np.linspace(0.0, 1.0, nsamples)
     stackOut = np.zeros((batch_size, stackSize, channels, nsamples))
 
-
-    # numpy는 torch와 달리 가장 앞쪽 index를 출력하는 것을 확인
     for l in range(len(u)):
         for i in range(batch_size):
             for j in range(stackSize):
