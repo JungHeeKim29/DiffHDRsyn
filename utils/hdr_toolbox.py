@@ -502,7 +502,6 @@ def ConstructRad(stack,
     # Merging stack images
     if merge_type =='linear' :
         raise NotImplementedError
-        # 이따 바꿀거
         #imgOut = imgOut + (weight * tmpStack) / dt_j
         #totWeight = totWeight + weight;
 
