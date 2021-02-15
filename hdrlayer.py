@@ -142,7 +142,6 @@ if __name__ == '__main__':
         result,crf = test(s1, ev1)
         plt.plot(torch.linspace(0,255,256), crf[0,0,:])
         plt.show()
-        import pdb;pdb.set_trace()
 
         loss = (result).flatten().abs().mean()
         loss.backward(retain_graph=True)        
