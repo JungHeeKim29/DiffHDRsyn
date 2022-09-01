@@ -6,9 +6,8 @@ short paper "Differentiable HDR Image Synthesis using Multi-exposure Images" at 
 If you find our [paper](https://arxiv.org/abs/2006.15833) or code useful, please cite our papers.
 
 ### Requirements
-VDS dataset will be available soon  
-Example dataset can be downloaded from [here](https://drive.google.com/drive/folders/163wy8VVxWJze4l5cPIXEM4fko_Q3x6y8?usp=sharing)  
-Pretrained weights can be downloaded from [here](https://drive.google.com/drive/folders/1inzZWbBTlOJTuqJODHvOhNSg-o60LyWs?usp=sharing)
+The dataset can be downloaded from [here](https://drive.google.com/file/d/1t9jmy4IbesieE5r6D6IXuR-t98xOi9oY/view?usp=sharing)  
+Pretrained weights can be downloaded from [here](https://drive.google.com/file/d/1KTm7HHisea-bWhdGjhbgBFE8uPQnGytF/view?usp=sharing)
 
 The code was tested under the following setting:
   1. pytorch >= 1.2.0
